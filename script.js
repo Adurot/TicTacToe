@@ -36,24 +36,25 @@ for (i = 0; i < 9; i++) {
     pmove[i] = 72 + i;
     pmove[5] = 23;
     document.getElementById("grid").appendChild(btn[i]);
-    btn[i].innerHTML = pmove[i];
-    btn[i].setAttribute("id",i);
+
+    btn[i].setAttribute("id", i);
 
     document.getElementById(i).onclick = function (e) {
-        if(e.target.innerHTML =="X"||e.target.innerHTML =="0"){ 
+        if (e.target.innerHTML == "X" || e.target.innerHTML == "0") {
             alert("That spot has already been chosen!")
         }
-        else{
+        else {
             turn++;
-        
-        if (turn % 2==0){
-            e.target.innerHTML="X";
 
-        }
-        else{
-            e.target.innerHTML="0";
-        }
-        
+            if (turn % 2 == 1) {
+                e.target.innerHTML = "X";
+                pmove[e.target.id] = "X";
+            }
+            else {
+                e.target.innerHTML = "0";
+                pmove[e.target.id] = "0";
+            }
+
         }
         //btn[i].innerHTML = pmove[i];
         stat.win();
@@ -71,13 +72,13 @@ for (i = 0; i < 9; i++) {
         //btn[a-1].textContent= 'Button clicked';
     });
     pmove[1] = 'x';
-    
+
 }
-function e(id){
-return document.getElemenetby(id);
+function e(id) {
+    return document.getElemenetby(id);
 }
 
-console.log('test'+btn[3].id)
+console.log('test' + btn[3].id)
 
 const pmovef = (value, integer) => {
     const sayHello = () => console.log('hello!');
@@ -91,8 +92,14 @@ const pmove1 = pmovef(1, 1);
 
 const stat = (() => {
     function win() {
-        if (pmove[0] == pmove[1] && pmove[2] == pmove[1]) { console.log("winner!") }
-        else { console.log("no winner yet!")}
+        if (pmove[0] == pmove[1] && pmove[2] == pmove[1]) {
+            if (turn % 2 == 0) {
+                alert(player2.name+" is the winner!")
+            } else {
+                alert(player1.name+" is the winner!")
+            }
+        }
+        else { console.log("no winner yet!") }
     }
     const add = (a, b) => a + b;
     const sub = (a, b) => a - b;
