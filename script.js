@@ -2,6 +2,9 @@ const personFactory = (name, score) => {
     const sayHello = () => console.log('hello!');
     return { name, score, sayHello };
 };
+document.getElementById("grid").style.backgroundColor = "black";
+document.getElementById("grid").style.width = "156px";
+
 
 const player1 = personFactory('Player One', 27);
 
