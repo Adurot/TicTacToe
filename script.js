@@ -95,7 +95,18 @@ const pmove1 = pmovef(1, 1);
 
 const stat = (() => {
     function win() {
-        if (pmove[0] == pmove[1] && pmove[2] == pmove[1]) {
+        if (pmove[0] == pmove[1] && pmove[2] == pmove[1]||
+            pmove[3] == pmove[4] && pmove[4] == pmove[5]||
+            pmove[6] == pmove[7] && pmove[7] == pmove[8]||
+            pmove[0] == pmove[4] && pmove[4] == pmove[8]||
+            pmove[0] == pmove[3] && pmove[3] == pmove[6]||
+            pmove[1] == pmove[4] && pmove[4] == pmove[7]||
+            pmove[2] == pmove[5] && pmove[5] == pmove[8]||
+            pmove[0] == pmove[1] && pmove[2] == pmove[1]||
+            pmove[0] == pmove[1] && pmove[2] == pmove[1]
+            
+            
+            ) {
             if (turn % 2 == 0) {
                 alert(player2.name+" is the winner!")
             } else {
