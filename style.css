@@ -1,0 +1,10 @@
+#grid {
+    display: grid;
+    gap: 3px;
+    grid-template-columns: repeat(3, 50px);
+  }
+  
+  div > div {
+    padding: 10px;
+    background-color: #ccc;
+  }
