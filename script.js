@@ -1,3 +1,5 @@
+
+
 const personFactory = (name, score) => {
     const sayHello = () => console.log('hello!');
     return { name, score, sayHello };
@@ -20,6 +22,12 @@ console.log(player2.name);
 player2.sayHello();
 
 console.log(player2.name + " has won " + player2.score + " times!");
+
+player1.name = prompt("Enter Player 1's name", "<name goes here>");
+
+
+player2.name = prompt("Enter Player 2's name", "<name goes here>");
+
 
 
 const btn = [];
